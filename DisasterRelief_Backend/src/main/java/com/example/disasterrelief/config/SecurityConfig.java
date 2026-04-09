@@ -18,7 +18,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
-@EnableWebSecurity // Use this instead of @EnableWebMvc for Security
+@EnableWebSecurity // Use this instead of @EnableWebMvc for Security...
 public class SecurityConfig {
 
     @Autowired
