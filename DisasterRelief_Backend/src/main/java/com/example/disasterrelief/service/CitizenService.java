@@ -35,8 +35,8 @@ public class CitizenService {
         user.setEmail(requestDTO.getEmail());
         user.setPassword(passwordEncoder.encode(requestDTO.getPassword()));
         user.setPhone(requestDTO.getPhone()); // Using phone from DTO
-        user.setRole(Role.Citizen);
-        user.setStatus(UserStatus.INACTIVE); // Default hardcoded
+        user.setRole(Role.CITIZEN);
+        user.setStatus(UserStatus.ACTIVE); // Default hardcoded
 
         User savedUser = userRepository.save(user);
 
@@ -48,7 +48,8 @@ public class CitizenService {
         citizen.setGender(requestDTO.getGender());
         citizen.setAddress(requestDTO.getAddress());
         citizen.setContactInfo(requestDTO.getPhone()); // Mapping same phone here
-        citizen.setStatus(CitizenStatus.PENDING);    // Default hardcoded
+        citizen.setStatus(CitizenStatus.ACTIVE);
+        // Default hardcoded
 
         return citizenRepository.save(citizen);
     }

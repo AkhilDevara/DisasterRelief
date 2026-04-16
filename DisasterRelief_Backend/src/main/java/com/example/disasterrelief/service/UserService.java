@@ -44,6 +44,7 @@ package com.example.disasterrelief.service;
 
 
 import com.example.disasterrelief.dao.UserRepository;
+import com.example.disasterrelief.dto.request.LoginRequestDTO;
 import com.example.disasterrelief.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -71,7 +72,7 @@ public class UserService {
     @Autowired
     JWTService jwtService;
 
-    public String UserLoginValidation(User user) {
+    public String UserLoginValidation(LoginRequestDTO user) {
         System.out.println(user.getEmail() +" password:"+user.getPassword());
         Authentication authentication = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));

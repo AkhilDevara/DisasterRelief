@@ -1,7 +1,6 @@
 package com.example.disasterrelief.service;
 
 
-
 import com.example.disasterrelief.dao.CitizenRepository;
 import com.example.disasterrelief.dao.EmergencyRepository;
 import com.example.disasterrelief.dto.request.EmergencyReportRequestDTO;

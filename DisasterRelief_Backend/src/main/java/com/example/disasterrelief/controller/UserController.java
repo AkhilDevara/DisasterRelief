@@ -1,4 +1,5 @@
 package com.example.disasterrelief.controller;
+import com.example.disasterrelief.dto.request.LoginRequestDTO;
 import com.example.disasterrelief.dto.request.UserRequestDTO;
 import com.example.disasterrelief.entity.User;
 import com.example.disasterrelief.service.UserService;
@@ -32,7 +33,7 @@ public class UserController {
         return userService.createUser(user);
     }
     @PostMapping("/login")
-    public String UserLoginValidation(@RequestBody  User user){
+    public String UserLoginValidation(@RequestBody LoginRequestDTO user){
         System.out.println(user.getEmail()+" "+user.getPassword());
         return userService.UserLoginValidation(user);
     }

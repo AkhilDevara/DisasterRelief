@@ -46,7 +46,7 @@ public class DistributionService {
                 .quantity(dto.getQuantity() != null ? dto.getQuantity() : 0)
                 .notes(dto.getNotes())
                 .date(LocalDateTime.now())
-                .status(parseStatus(dto.getStatus())) // Safe conversion
+                .status(distributionStatus.PENDING) // Safe conversion
                 .build();
 
         Distribution saved = distributionRepository.save(distribution);
@@ -67,7 +67,7 @@ public class DistributionService {
                 .officerId(request.getOfficerId() != null ? request.getOfficerId() : existingRecord.getOfficerId())
                 .quantity(request.getQuantity() != null ? request.getQuantity() : existingRecord.getQuantity())
                 .notes(request.getNotes() != null ? request.getNotes() : existingRecord.getNotes())
-                .status(request.getStatus() != null ? parseStatus(request.getStatus()) : existingRecord.getStatus())
+//                .status(request.getStatus() != null ? parseStatus(request.getStatus()) : existingRecord.getStatus())
                 .build();
 
         Distribution savedRecord = distributionRepository.save(updatedEntity);
@@ -97,15 +97,14 @@ public class DistributionService {
     }
 
     // Helper to safely parse Status from String to Enum
-    private distributionStatus parseStatus(String statusStr) {
-        if (statusStr == null || statusStr.isEmpty()) {
-            return distributionStatus.PENDING; // Default fallback
-        }
-        try {
-            return distributionStatus.valueOf(statusStr);
-        } catch (IllegalArgumentException e) {
-            // Handle case where user sends "pending" instead of "Pending"
-            return distributionStatus.PENDING;
-        }
+//    private distributionStatus parseStatus(String statusStr) {
+//        if (statusStr == null || statusStr.isEmpty()) {
+//            return distributionStatus.PENDING; // Default fallback
+//        }
+//        try {
+//            return distributionStatus.valueOf(statusStr);
+//        } catch (IllegalArgumentException e) {
+//            // Handle case where user sends "pending" instead of "Pending"
+//            return distributionStatus.PENDING;
+//        }
     }
-}
