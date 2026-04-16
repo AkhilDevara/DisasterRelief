@@ -20,6 +20,7 @@ import org.jspecify.annotations.Nullable;
 @Builder
 public class User {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "UserID")

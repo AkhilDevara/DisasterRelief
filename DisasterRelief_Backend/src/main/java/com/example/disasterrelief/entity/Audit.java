@@ -1,6 +1,6 @@
 package com.example.disasterrelief.entity;
 
-import jakarta.persistence.*;
+import  jakarta.persistence.*;
 import lombok.*;
 import com.example.disasterrelief.Enum.AuditStatus;
 import java.time.LocalDateTime;

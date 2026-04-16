@@ -28,9 +28,9 @@ public class DistributionRequestDTO {
     @NotBlank(message = "Notes cannot be null")
     private String notes;
 
-    // Receiving status as a String is much more stable for JSON input
-    @NotNull(message = "Please provide a valid status")
-    private String status;
+//    // Receiving status as a String is much more stable for JSON input
+//    @NotNull(message = "Please provide a valid status")
+//    private String status;
 
     // Standard Getters and Setters
 //    public Integer getDistributionId() { return distributionId; }
